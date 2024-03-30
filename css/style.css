@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #161616;
+}
+.loader {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border: 5px solid transparent;
+  border-left: 5px solid #0f0;
+  filter: drop-shadow(0 0 5px #0f0f) drop-shadow(0 0 25px #0f0f);
+  border-radius: 50%;
+  animation: animate 2s linear infinite;
+  margin: -30px;
+}
+@keyframes animate {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+.loader::before {
+  content: "\f135";
+  font-family: fontAwesome;
+  position: absolute;
+  color: #0f0;
+  top: 10px;
+  font-size: 30px;
+}
+.loader:nth-child(2) {
+  border-left: 5px solid #0ff;
+  filter: drop-shadow(0 0 5px #0ff) drop-shadow(0 0 25px #0ff);
+  animation: animate2 2s linear infinite;
+  animation-delay: 2.5s;
+}
+.loader:nth-child(2):before {
+  content: "\f072";
+  font-family: fontAwesome;
+  position: absolute;
+  color: #0ff;
+  top: 100px;
+  font-size: 30px;
+  rotate: 45deg;
+}
+@keyframes animate2 {
+  0% {
+    rotate: 360deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+.loader:nth-child(3) {
+  position: absolute;
+  top: 270px;
+  border-left: 5px solid #f0f;
+  filter: drop-shadow(0 0 5px #f0f) drop-shadow(0 0 25px #f0f);
+  animation: animate2 2s linear infinite;
+  animation-delay: 1.5s;
+}
+.loader:nth-child(3):before {
+  content: "\f072";
+  font-family: fontAwesome;
+  position: absolute;
+  color: #f0f;
+  top: 100px;
+  font-size: 30px;
+  rotate: 45deg;
+}
